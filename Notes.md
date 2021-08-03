@@ -2,4 +2,6 @@
 
 #### Primitive types
 
-` typeof (function a(){console.log('hi')}) // "function" `
+```js 
+typeof (function a(){console.log('hi')}) // "function" 
+```
