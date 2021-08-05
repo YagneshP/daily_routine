@@ -34,7 +34,6 @@ myFunc();
 	| | myFunc: --- |
  
  **excuting outer fun**                      
-  ***************************
   
 	| Execution Context | Global Memoery |
 	| ------------------ | -------------- |
