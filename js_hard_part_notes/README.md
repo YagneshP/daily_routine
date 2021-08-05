@@ -21,4 +21,7 @@ myFunc();
 - Line 6 : in Global memory define "outer" with "function defination"
 
 | Execution Context | Global Memoery |
+| ------------------ | -------------- |
 | | outer: ->[fn]->|
+
+- line 14 : we are not executing the function outer so the JS engine move to line 14 where we are executing the func.
