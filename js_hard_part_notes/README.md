@@ -41,9 +41,12 @@ myFunc();
 	| | outer: ->[fn]->|
 	|  | myFunc: --- |
 
+	****************************
+	
 	************ callStack ***************
-  |callStack|
-  |--|
+	
+  | callStack |
+  | -- |
 	| outer() |
 	| global()|
 
