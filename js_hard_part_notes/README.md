@@ -39,12 +39,10 @@ myFunc();
 	| Execution Context | Global Memoery |
 	| ------------------ | -------------- |
 	| | outer: ->[fn]->|
-	|  | myFunc: --- |
+	| | myFunc: --- |
 
-	****************************
-	
 	************ callStack ***************
-	
+
   | callStack |
   | -- |
 	| outer() |
