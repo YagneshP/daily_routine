@@ -33,19 +33,38 @@ myFunc();
 	| myFunc: --- |
  
  **excuting outer fun**   
- this  willl create new execution context for outer fun                   
-  - first create "counter" variable and assign 0 value.
-	- create "inner" variable and assign it to func defination of inner function.
-	- now it return inner which holding inner function defination and "variable enviornment" "persist lexical scope reference data" like a backpack.  that means the data which is in local memory of the "outer" func.
-	| Execution Context | local Memoery |
-	| ------------------ | -------------- |
-	| | counter: 0|
-	| | inner: ->[fn]-> |
-
-	************ callStack ***************
+ this  willl create new execution context for outer fun 
+ 	************ callStack ***************
 
   | callStack |
   | --- |
 	| outer() |
-	| global()|
+	| global()|      
 
+  - Line 7 : first create "counter" variable and assign 0 value.
+	- Line 8 : create "inner" variable and assign it to func defination of inner function. when this variable assigned it gets hidden property of *--scope--* which holds the "counter" variable.
+	- Line 11 : *--now it return inner which holding inner function defination and "variable enviornment" "persist lexical scope reference data" like a backpack.  that means the data which is in local memory of the "outer" func.--*
+	
+	| Execution Context | local Memoery |
+	| ------------------ | -------------- |
+	| | counter: 0|
+	| | inner: ->[fn]-> + [[scope]](backpack) |
+
+ After completing outer func execution. outer() will pop out form call stack.
+ 	************ callStack ***************
+
+  | callStack |
+  | --- |
+	|  |
+	| global()| 
+
+**Excuting myFunc**
+- Line 15 : we are executing myFunc(); so thread of excution enter the "inner" which is on line 8
+ - As in inner, the counter variable which is not stored in local memory of "inner" it will go to look for "counter" in so called backpack (hidden scope or P.L.S.R.D or Variable env.) and increment "counter" variable {{ counter : 1}}
+
+ - Line 16 : Same process happen again and counter will increase to 2;
+
+ **Notes**
+ - You can't access the counter variable without running the inner func.
+ - Counter variable wont get deleted as it is not stored in local memory.
+ - The variable which is declared in outer and inner func doesn't reference it then it won't stored in backback. [memory leak] 
