@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React in Html</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- using script we are including javascript to change the dom -->
+    <script>
+      // use Web api (document) we get the root element
+      const rootElement = document.getElementById("root");
+      // create Element
+      const newElement = document.createElement("div");
+      newElement.textContent = "Hello";
+      // append this component into root Element
+      rootElement.append(newElement);
+    </script>
+    <!-- This is the rootElement where we append our elements -->
+  </body>
+</html>
